@@ -1,6 +1,6 @@
 // show/hide functions
 function showSection(sectionId) {
-    document.querySelectorAll('#archaeology, #anthropology, #histories').forEach(function(section) {
+    document.querySelectorAll('#archaeology, #anthropology, #history').forEach(function(section) {
         section.style.display = 'none';
     });
     document.getElementById(sectionId).style.display = 'block';
