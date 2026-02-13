@@ -357,7 +357,7 @@ footer {
 
 /* ai credit */
 .ai-credit-note {
-    font-size: 16 px;
+    font-size: 16px;
     color: #bdc3c7;
     font-style: normal;
     margin-top: -16px;
@@ -503,6 +503,8 @@ footer {
     max-width: 800px;
     border-radius: 8px;
     border: 3px solid #4a90a4;
+    max-height: 85vh; 
+    overflow-y: auto; 
 }
 
 .modal-content img {
@@ -519,3 +521,128 @@ footer {
     color: #d4af37;
     line-height: 32px;
 }
+
+/* modal styling */
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section h3 {
+    color: #4a90a4;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.modal-section p {
+    text-align: left;
+    line-height: 1.8;
+}
+
+.modal #modal-body {
+    text-align: left;
+}
+
+.modal #modal-body h2 {
+    color: #d4af37;
+    margin-bottom: 24px;
+}
+
+/* history modal styling */
+
+.history-item {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+    background: #2c3e50d9;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.history-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.history-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.history-content {
+    color: #ecf0f1;
+}
+
+.history-content h2 {
+    color: #d4af37;
+    font-size: 32px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #4a90a4;
+}
+
+.history-section {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.history-section h3 {
+    color: #bfdce4;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.history-section p {
+    line-height: 1.8;
+    text-align: left;
+    overflow: scroll;
+}
+
+.courtesy {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #d1dadd;
+    font-style: italic;
+    color: #bdc3c7;
+    text-align: left;
+}
+
+/* collections page extra css */
+
+.click-instruction {
+    text-align: center;
+    color: #4a90a4;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.hidden-section {
+    display: none;
+}
+
+.hidden-modal {
+    display: none;
+}
+
+.coming-soon {
+    text-align: center;
+    color: #bdc3c7;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.back-to-collections {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.back-to-collections a {
+    color: #4a90a4;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
