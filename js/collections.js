@@ -32,7 +32,7 @@ document.addEventListener('click', function(e) {
         return;
     }
     
-    // closing image
+    // closing image time
     if (e.target.id === 'modal' || e.target.classList.contains('close-modal')) {
         closeModal();
     }
