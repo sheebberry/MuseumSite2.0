@@ -29,7 +29,7 @@
     <main class="cart-main">
         <h2>Shopping Cart</h2>
         
-        <!-- Member Discount Checkbox -->
+        <!-- member discount -->
         <div class="member-checkbox">
             <label>
                 <input type="checkbox" id="memberCheckbox" onchange="toggleMember(this)"> 
@@ -37,12 +37,12 @@
             </label>
         </div>
 
-        <!-- Empty Cart Message (hidden by default) -->
+      
         <div id="empty-cart" class="empty-cart" style="display:none;">
             <p>Your cart is empty</p>
         </div>
 
-        <!-- Cart Items Table -->
+        <!-- items -->
         <div id="cart-items" class="cart-items">
             <table class="cart-table">
                 <thead>
@@ -56,7 +56,7 @@
                     </tr>
                 </thead>
                 <tbody id="cart-tbody">
-                    <!-- Items will be inserted here -->
+                   
                 </tbody>
             </table>
         </div>
@@ -95,7 +95,7 @@
             </table>
         </div>
 
-        <!-- Cart Controls -->
+        <!-- cart control -->
         <div class="cart-controls">
             <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
             <button onclick="location.href='shop.html'" class="keep-shopping-btn">Keep Shopping</button>

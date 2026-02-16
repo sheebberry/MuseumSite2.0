@@ -1,6 +1,6 @@
-// CART JAVASCRIPT
+// cart javascript 
 
-// Constants - declared at top
+
 const TAX_RATE = 0.102;
 const MEMBER_DISCOUNT_RATE = 0.15;
 const SHIPPING_RATE = 25.00;
@@ -12,11 +12,10 @@ const VOLUME_DISCOUNT_TIERS = [
 ];
 const CART_KEY = 'museumCartV1';
 
-// Variables
 let cart = [];
 let isMember = false;
 
-// Read cart from localStorage
+
 function readCart() {
     try {
         return JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -25,19 +24,17 @@ function readCart() {
     }
 }
 
-// Write cart to localStorage
 function writeCart(cartData) {
     localStorage.setItem(CART_KEY, JSON.stringify(cartData));
 }
 
-// Remove item from cart
+
 function removeItem(itemId) {
     cart = cart.filter(item => item.id !== itemId);
     writeCart(cart);
     render();
 }
 
-// Clear entire cart
 function clearCart() {
     if (confirm('Are you sure you want to clear your entire cart?')) {
         cart = [];
@@ -48,13 +45,13 @@ function clearCart() {
     }
 }
 
-// Toggle member discount
+
 function toggleMember(checkbox) {
     isMember = checkbox.checked;
     render();
 }
 
-// Format currency
+
 function formatCurrency(amount) {
     if (amount < 0) {
         return '($' + Math.abs(amount).toFixed(2) + ')';
@@ -62,7 +59,7 @@ function formatCurrency(amount) {
     return '$' + amount.toFixed(2);
 }
 
-// Get volume discount rate
+
 function getVolumeDiscountRate(itemTotal) {
     for (let i = 0; i < VOLUME_DISCOUNT_TIERS.length; i++) {
         const tier = VOLUME_DISCOUNT_TIERS[i];
@@ -73,18 +70,17 @@ function getVolumeDiscountRate(itemTotal) {
     return 0;
 }
 
-// RENDER FUNCTION - updates the display
+
 function render() {
     const emptyCart = document.getElementById('empty-cart');
     const cartItems = document.getElementById('cart-items');
     const cartTbody = document.getElementById('cart-tbody');
 
-    // Check if cart is empty
+
     if (cart.length === 0) {
         emptyCart.style.display = 'block';
         cartItems.style.display = 'none';
-        
-        // Reset all totals to zero
+
         document.getElementById('item-total').textContent = '$0.00';
         document.getElementById('volume-discount').textContent = '$0.00';
         document.getElementById('member-discount').textContent = '$0.00';
@@ -95,17 +91,17 @@ function render() {
         return;
     }
 
-    // Show cart table
+
     emptyCart.style.display = 'none';
     cartItems.style.display = 'block';
 
-    // Calculate item total
+    // total
     let itemTotal = 0;
     for (let i = 0; i < cart.length; i++) {
         itemTotal += cart[i].unitPrice * cart[i].qty;
     }
 
-    // Calculate discounts
+
     const volumeDiscountRate = getVolumeDiscountRate(itemTotal);
     let volumeDiscount = itemTotal * volumeDiscountRate;
     let memberDiscount = 0;
@@ -114,7 +110,7 @@ function render() {
         memberDiscount = itemTotal * MEMBER_DISCOUNT_RATE;
     }
 
-    // Handle mutual exclusivity of discounts
+    // discount
     let appliedDiscount = 0;
     if (volumeDiscount > 0 && memberDiscount > 0) {
         const choice = confirm('You qualify for both discounts. Only one can be applied.\n\nOK = Member Discount (15%)\nCancel = Volume Discount (' + (volumeDiscountRate * 100) + '%)');
@@ -133,12 +129,12 @@ function render() {
         appliedDiscount = volumeDiscount;
     }
 
-    // Calculate final totals
+    // total
     const subtotal = itemTotal - appliedDiscount + SHIPPING_RATE;
     const taxAmount = subtotal * TAX_RATE;
     const invoiceTotal = subtotal + taxAmount;
 
-    // Build cart items rows
+    
     let rowsHTML = '';
     for (let i = 0; i < cart.length; i++) {
         const item = cart[i];
@@ -155,7 +151,7 @@ function render() {
     }
     cartTbody.innerHTML = rowsHTML;
 
-    // Update summary values
+    // summery value
     document.getElementById('item-total').textContent = formatCurrency(itemTotal);
     document.getElementById('volume-discount').textContent = formatCurrency(-volumeDiscount);
     document.getElementById('member-discount').textContent = formatCurrency(-memberDiscount);
@@ -165,6 +161,6 @@ function render() {
     document.getElementById('invoice-total').textContent = formatCurrency(invoiceTotal);
 }
 
-// Load cart and render on page load
+
 cart = readCart();
 render();

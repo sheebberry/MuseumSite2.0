@@ -810,19 +810,12 @@ footer {
     color: #ecf0f1;
 }
 
-.clear-btn:hover {
-    background-color: #c0392b;
-}
 
 .keep-shopping-btn {
     background-color: #4a90a4;
     color: #ecf0f1;
 }
 
-.keep-shopping-btn:hover {
-    background-color: #d4af37;
-    color: #2c3c4d;
-}
 
 #viewCartBtn {
     background-color: #d4af37;
@@ -836,10 +829,6 @@ footer {
     margin-left: 16px;
 }
 
-#viewCartBtn:hover {
-    background-color: #4a90a4;
-    color: #ecf0f1;
-}
 
 .qty-badge {
     display: inline-block;
