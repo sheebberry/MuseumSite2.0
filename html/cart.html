@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping cart for Museum of Cultural Memory">
+    <meta name="author" content="Sheeba Soliamani">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Shopping Cart - Museum of Cultural Memory</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Museum of Cultural Memory</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="staff.html">Staff</a>
+            <a href="collections.html">Collections</a>
+            <a href="shop.html">Shop</a>
+        </nav>
+    </header>
+
+    <main class="cart-main">
+        <h2>Shopping Cart</h2>
+        
+        <!-- member discount -->
+        <div class="member-checkbox">
+            <label>
+                <input type="checkbox" id="memberCheckbox" onchange="toggleMember(this)"> 
+                Museum Member (15% discount)
+            </label>
+        </div>
+
+      
+        <div id="empty-cart" class="empty-cart" style="display:none;">
+            <p>Your cart is empty</p>
+        </div>
+
+        <!-- items -->
+        <div id="cart-items" class="cart-items">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Line Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-tbody">
+                   
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <table class="summary-table">
+                <tr>
+                    <td>Item Total:</td>
+                    <td class="amount" id="item-total">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Volume Discount:</td>
+                    <td class="amount" id="volume-discount">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Member Discount:</td>
+                    <td class="amount" id="member-discount">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping:</td>
+                    <td class="amount" id="shipping">$25.00</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td>Subtotal (Taxable):</td>
+                    <td class="amount" id="subtotal">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Tax (10.2%):</td>
+                    <td class="amount" id="tax-amount">$0.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Invoice Total:</td>
+                    <td class="amount" id="invoice-total">$0.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- cart control -->
+        <div class="cart-controls">
+            <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
+            <button onclick="location.href='shop.html'" class="keep-shopping-btn">Keep Shopping</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="disclaimer">
+            <p>This is a website created for academic purposes.</p>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+</body>
+</html>

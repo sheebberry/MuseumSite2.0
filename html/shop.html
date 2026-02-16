@@ -9,7 +9,8 @@
     <meta name="robots" content="noindex, nofollow">
     
     <title>Souvenir Shop - Museum of Cultural Memory</title>
-     <!--fonts-->
+    
+    <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
             <a href="staff.html">Staff</a>
             <a href="collections.html">Collections</a>
             <a href="shop.html">Shop</a>
+            <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart</button>
         </nav>
     </header>
 
@@ -32,57 +34,85 @@
             <h2>Museum Souvenir Shop</h2>
             <p>Take home a piece of history with our collection-inspired replicas and souvenirs.</p>
         </div>
-
+        
         <div class="shop-container">
 
-            <!-- first item -->
-             <!--artifact credit: https://www.antiquesartifacts.com/store/p340/Egyptian-Mummy-Mask.html-->
-            <div class="souvenir-item" data-id="item001" title="Egyptian Mummy Mask">
-                <img src="../images/shop/egyptian-shop.jpg" alt="An Egyptian Mummy Mask - Late Period" onclick="openModal(this)">
+            <!-- item no.4 -->
+            <div class="souvenir-item" data-id="item001">
+                <span class="qty-badge" aria-live="polite"></span>
+                <img src="../images/shop/egyptian-shop.jpg" 
+                     alt="An Egyptian Mummy Mask - Late Period" 
+                     onclick="openModal(this)">
                 <h3>Egyptian Mummy Mask - Late Period</h3>
-                <p>From the Anthropology section, a mask from the late period of 700 BC -30 BC, found in the Vally of Kings. The mask was used to provide protect the head or face of the deceased, it was also said a mask of protection from evil sprits as well.</p>
+                <p>From the Anthropology section, a mask from the late period of 700 BC -30 BC, found in the Valley of Kings. The mask was used to provide protection for the head or face of the deceased, it was also said to be a mask of protection from evil spirits as well.</p>
                 <p class="price">$1,699.00</p>
-                <button onclick="addToCart('item001', 'Egyptian Mummy Mask')">Added Egyptian Mummy Maskto Cart</button>
+                <button onclick="addToCart(this)" 
+                        data-id="item001" 
+                        data-name="Egyptian Mummy Mask - Late Period" 
+                        data-price="1699.00" 
+                        data-image="../images/shop/egyptian-shop.jpg">
+                    Add Egyptian Mummy Mask to Cart
+                </button>
             </div>
-           
 
-            <!-- second item -->
-            <!--artifact credit: https://www.davidaaron.com/artwork-details/862452/0/neolithic-figure-near-eastern-art-for-->
-            <div class="souvenir-item" data-id="item002" title="Neolithic Figure">
-                <img src="../images/shop/neolithic-shop.jpg" alt="A Neolithic Figure made out of stone" onclick="openModal(this)">
+            <!-- item no.2 -->
+            <div class="souvenir-item" data-id="item002">
+                <span class="qty-badge" aria-live="polite"></span>
+                <img src="../images/shop/neolithic-shop.jpg" 
+                     alt="A Neolithic Figure made out of stone" 
+                     onclick="openModal(this)">
                 <h3>Neolithic Figure</h3>
-                <p>From the Archeology section, a figure from the Neolithic, 10000 - 4500 B.C, found in the eastern mediterranean. It is carved from a thick slab of volcanic stone, it's found to be a symbol of ancestral repersentation or household protection. </p>
-                <p class="price">$2,200</p>
-                <button onclick="addToCart('item002', 'Neolithic Figure')">Added Neolithic Figure Cart</button>
+                <p>From the Archeology section, a figure from the Neolithic, 10000 - 4500 B.C, found in the eastern mediterranean. It is carved from a thick slab of volcanic stone, it's found to be a symbol of ancestral representation or household protection.</p>
+                <p class="price">$2,200.00</p>
+                <button onclick="addToCart(this)" 
+                        data-id="item002" 
+                        data-name="Neolithic Figure" 
+                        data-price="2200.00" 
+                        data-image="../images/shop/neolithic-shop.jpg">
+                    Add Neolithic Figure to Cart
+                </button>
             </div>
 
-
-            <!-- thrid item -->
-             <!--artifact credit: https://www.bidsquare.com/online-auctions/artemis-gallery/rare-chandraketugarh-pottery-plaque-of-goddess---yakshi-1318742-->
-            <div class="souvenir-item" data-id="item003" title="Chandraketugarh Pottery">
-                <img src="../images/shop/chandraketugarh-shop.jpg" alt="Chandraketugarh Pottery of a Godsess" onclick="openModal(this)">
+            <!-- item n.3-->
+            <div class="souvenir-item" data-id="item003">
+                <span class="qty-badge" aria-live="polite"></span>
+                <img src="../images/shop/chandraketugarh-shop.jpg" 
+                     alt="Chandraketugarh Pottery of a Goddess" 
+                     onclick="openModal(this)">
                 <h3>Rare Chandraketugarh Pottery Plaque of Goddess - Yakshi</h3>
-                <p>From the Anthropology section, found in Eastern India, created around 2nd century BCE to 1st century CE, is a moulded terracotta plaque of a Goddess known as Yakshi. Yakshi was known as a nature sprit, she is associated with representing fertility, prosperity, and nature.</p>
-                <p class="price">$1,400</p>
-                <button onclick="addToCart('item003', 'Chandraketugarh Pottery')">Added Chandraketugarh Pottery to Cart</button>
+                <p>From the Anthropology section, found in Eastern India, created around 2nd century BCE to 1st century CE, is a moulded terracotta plaque of a Goddess known as Yakshi. Yakshi was known as a nature spirit, she is associated with representing fertility, prosperity, and nature.</p>
+                <p class="price">$1,400.00</p>
+                <button onclick="addToCart(this)" 
+                        data-id="item003" 
+                        data-name="Rare Chandraketugarh Pottery Plaque of Goddess - Yakshi" 
+                        data-price="1400.00" 
+                        data-image="../images/shop/chandraketugarh-shop.jpg">
+                    Add Chandraketugarh Pottery to Cart
+                </button>
             </div>
 
-
-            <!-- fourth item -->
-             <!--artifact credit:https://paleoenterprises.com/shop/native-american-arrowheads-and-artifacts/early-archaic-period-10500-7000-yrs-bp/fl-osceola-greenbriar-type-arrowhead/-->
-            <div class="souvenir-item" data-id="item004" title="Native American Arrowhead">
-                <img src="../images/shop/arrowhead-shop.jpg" alt="Native American Arrowhead" onclick="openModal(this)">
+            <!-- item no.4 -->
+            <div class="souvenir-item" data-id="item004">
+                <span class="qty-badge" aria-live="polite"></span>
+                <img src="../images/shop/arrowhead-shop.jpg" 
+                     alt="Native American Arrowhead" 
+                     onclick="openModal(this)">
                 <h3>Native American Arrowhead</h3>
-                <p>From the Anthropology section, a Native American arrowhead carved out of fossial chert, from the early Archaic, 10,5000 – 7000 yrs BP, found in what is now the Gulf Coastal region. These types of arrow heads were seemed to be used as a spear thrower, to be able to aim at a further at greater accuracy.</p>
-                <p class="price">$350</p>
-                <button onclick="addToCart('item004', 'Native American Arrowhead')">Added Native American Arrowhead to Cart</button>
+                <p>From the Anthropology section, a Native American arrowhead carved out of fossil chert, from the early Archaic, 10,500 – 7000 yrs BP, found in what is now the Gulf Coastal region. These types of arrow heads were seemed to be used as a spear thrower, to be able to aim further at greater accuracy.</p>
+                <p class="price">$350.00</p>
+                <button onclick="addToCart(this)" 
+                        data-id="item004" 
+                        data-name="Native American Arrowhead" 
+                        data-price="350.00" 
+                        data-image="../images/shop/arrowhead-shop.jpg">
+                    Add Native American Arrowhead to Cart
+                </button>
             </div>
-
 
         </div>
     </main>
 
-    <!-- modal for image -->
+    <!-- modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -95,6 +125,7 @@
             <p>Bio's on this page was credited and is created to Sheeba Soliamani. This is a website created purely for academic purposes.</p>
         </div>
     </footer>
+    
     <script src="../js/shop.js"></script>
 </body>
 </html>
